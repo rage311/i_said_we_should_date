@@ -3,8 +3,12 @@ use std::process::Command;
 
 fn usage(me: String) {
     println!(
-        "Usage: {} timestamp child_binary, e.g.:\n{} 2147483647 /path/to/my/binary\n{} 2038-01-19T03:14:07Z /path/to/my/binary",
-        me, me, me
+r#"Usage: {} timestamp child_binary, e.g.:
+
+    {} 2147483647 /path/to/my/binary
+    {} 2038-01-19T03:14:07Z /path/to/my/binary
+    {} 2001-12-31T23:59:59-05:00 /path/to/my/binary"#,
+        me, me, me, me
     );
 }
 

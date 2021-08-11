@@ -39,15 +39,15 @@ mod tests {
     }
 
     #[test]
-    fn set_epoch() {
-        std::env::set_var(ENV_VAR, "1234567890");
-        assert_eq!(unsafe { time() }, 1234567890);
+    fn epoch_fail() {
+        std::env::set_var(ENV_VAR, "the fifth of november");
+        assert_eq!(unsafe { time() }, now_epoch());
     }
 
     #[test]
-    fn cant_parse() {
-        std::env::set_var(ENV_VAR, "the fifth of november");
-        assert_eq!(unsafe { time() }, now_epoch());
+    fn epoch_success() {
+        std::env::set_var(ENV_VAR, "1234567890");
+        assert_eq!(unsafe { time() }, 1234567890);
     }
 
     #[test]
