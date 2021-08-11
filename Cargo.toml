@@ -1,0 +1,18 @@
+[package]
+name = "ld_preload_rust"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+libc = "0.2.99"
+chrono = "0.4"
+
+[lib]
+name         = "ld_preload_rust"
+crate-type   = ["cdylib"]
+
+[[bin]]
+name = "preload"
+path = "src/bin.rs"
